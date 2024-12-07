@@ -3,7 +3,7 @@
 ## Overview
 This project involves data augmentation and training a neural network for image classification. The dataset consists of images labeled with different characters (numbers and letters), and the goal is to augment the data to balance the classes and then train a neural network to classify the images.
 
-## Data Augmentation
+## Data Augmentation (Analysis.ipynb)
 The data augmentation process involves generating new images from the existing dataset by applying various transformations. This helps in increasing the size of the dataset and balancing the classes. The steps involved in data augmentation are as follows:
 
 - Visualize Data Distribution: Use matplotlib and seaborn to visualize the distribution of the data. This helps in understanding the imbalance in the dataset.
@@ -22,14 +22,14 @@ Gaussian Blur: Randomly apply Gaussian blur to the image.
 - Update DataFrame: Create new rows in the DataFrame for the augmented images and concatenate them with the original data. This results in an updated DataFrame saved under updated_Labels.
 
 
-## Training
+## Training CNN model (Training.ipynb)
 The training process involves loading the augmented data, preprocessing the images, and training a neural network using PyTorch. The steps involved in training are as follows:
 
 - Load and Preprocess Images: Load the images and labels from the updated DataFrame. Convert the images to grayscale and resize them to 28x28 pixels. Normalize the pixel values to be in the range [0, 1].
 
 - Split Data: Split the data into training and test sets. Ensure a balanced distribution of classes by manually selecting a fixed number of samples per class for the test set. (here 2000 for each label)
-
-- Convert to Tensors: Convert the images and labels to PyTorch tensors. This is necessary for training the neural network using PyTorch.
+  
+- CNN : We used Convolution, Max Pooling, Fully connected Neural Network, and Dropout (Randomly sets 50% of neurons to 0 during training to prevent overfitting).
 
 - Define Neural Network: Define the architecture of the neural network. This includes specifying the layers, activation functions, and other hyperparameters.
 
